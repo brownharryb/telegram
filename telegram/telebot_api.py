@@ -97,7 +97,7 @@ def handle_0(chat_id, message_data):
         msg = "{} accepted \nPlease select a service for this estate to proceed..\n".format(estate_info['estate_name'])
         msg += services
         return msg
-    return "Sorry,I can't find that estate please try again \xF0\x9F\x98\x94"
+    return "Sorry,I can't find that estate please try again"
 
 def handle_1(chat_id, message_data):
         '''Expects Phone Number.'''
