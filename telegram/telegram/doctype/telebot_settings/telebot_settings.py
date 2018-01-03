@@ -19,11 +19,8 @@ class TelebotSettings(Document):
 	def set_webhook(self):
 		try:
 			url = "https://api.telegram.org/bot{}/setWebhook?".format(self.token)
-			url += "url={}/api/method/telegram.telegram_api.get_update".format(get_url())
+			url += "url={}/api/method/telegram.telebot_api.get_update".format(get_url())
 			r = requests.get(url,timeout=10)
-			frappe.logger().info(r.content)
-			frappe.logger().info(r.status_code)
-			# frappe.logger().info(url)
 		except Exception as e:
 			frappe.log_error(e,'Timeout for Telebot')
 
