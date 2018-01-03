@@ -39,7 +39,7 @@ def get_estate_services(code):
 				if service.estate == estate['estate_name']:
 					services.append({'label':service.estate_service, 'link':service.estate_service_url})
 	return services
-	
+
 
 @frappe.whitelist(allow_guest=True)
 def get_update():
@@ -83,7 +83,7 @@ def handle_0(chat_id, message_data):
     '''Expects estate code in incoming messsage.'''
     new_message = message_data['text']
     if new_message in ["","/start _"]:
-        return
+        return "Invalid message!"
     new_message = new_message.strip()
     new_message = new_message.replace("  ","")
     estate_info = get_estate_info(new_message)
